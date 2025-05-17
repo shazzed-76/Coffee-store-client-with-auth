@@ -1,9 +1,11 @@
-import React from "react";
+import React, { use } from "react";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { CoffeeContext } from "../Context/CoffeeProvider";
 
 const AddCoffee = () => {
     const navigate = useNavigate();
+    const { coffees, setCoffees } = use(CoffeeContext);
 
     const hangleAddNewCoffee = e => {
         e.preventDefault();
@@ -23,6 +25,9 @@ const AddCoffee = () => {
         .then(res => res.json())
         .then(data => {
             if(data.insertedId){
+                coffeeData._id = data.insertedId;
+                const newCoffees = [ ...coffees, coffeeData]
+                setCoffees(newCoffees)
                 Swal.fire({
                   position: "center",
                   icon: "success",

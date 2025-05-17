@@ -8,6 +8,7 @@ import Home from './Components/Home.jsx';
 import SingleCoffee from './Components/SingleCoffee.jsx';
 import UpdateCoffeeInfo from './Components/UpdateCoffeeInfo.jsx';
 import AddCoffee from './Components/AddCoffee.jsx';
+import CoffeeProvider from './Context/CoffeeProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CoffeeProvider>
+      <RouterProvider router={router} />
+    </CoffeeProvider>
   </StrictMode>
 );
