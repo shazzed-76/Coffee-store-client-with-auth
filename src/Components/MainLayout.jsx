@@ -1,9 +1,12 @@
-import React from 'react';
+import { Outlet } from 'react-router';
 
-const MainLayout = () => {
+const MainLayout = () => {   
     return (
         <>
-            
+            <header></header>
+            <main>
+                <Outlet />
+            </main>
         </>
     );
 };
