@@ -17,24 +17,26 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: '/',
-        element: <Home />
+        path: "/",
+        element: <Home />,
       },
 
       {
-        path: 'add-coffee',
-        element: <AddCoffee />
+        path: "add-coffee",
+        element: <AddCoffee />,
       },
 
       {
-        path: 'single-coffee',
-        element: <SingleCoffee />
-      }, 
+        path: "single-coffee/:id",
+        loader:({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
+        element: <SingleCoffee />,
+        hydrateFallbackElement: <p>Loading.....</p>
+      },
       {
-        path: 'update-coffee-info',
-        element: <UpdateCoffeeInfo />
-      }
-    ]
+        path: "update-coffee-info/:id",
+        element: <UpdateCoffeeInfo />,
+      },
+    ],
   },
 ]);
 

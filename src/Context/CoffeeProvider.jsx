@@ -11,7 +11,7 @@ const CoffeeProvider = ({children}) => {
             try{
                 const res = await fetch('http://localhost:3000/coffees');
                 if(!res.ok) {
-                    throw new error(`Fetch failed: ${response.status} - ${error.text}`)
+                    throw new error(`Fetch failed: ${res.status}`)
                 }
                 const data = await res.json();
                 setCoffees(data)
