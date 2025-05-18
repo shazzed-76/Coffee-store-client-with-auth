@@ -5,6 +5,8 @@ export const CoffeeContext = createContext();
 const CoffeeProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [coffees, setCoffees] = useState(null);
+    const [ status, setStatus ] = useState(true);
+
 
     useEffect(() => {
        const fetchData = async() => {
@@ -21,13 +23,13 @@ const CoffeeProvider = ({children}) => {
        };
 
        fetchData()
-    }, []);
+    }, [status]);
 
 
     return (
-        <CoffeeContext value={{coffees, setCoffees, loading}}>
-            {children}
-        </CoffeeContext>
+      <CoffeeContext value={{ coffees, setCoffees, loading, setStatus, status }}>
+        {children}
+      </CoffeeContext>
     );
 };
 

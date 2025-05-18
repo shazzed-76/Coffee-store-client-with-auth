@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import SingleCoffee from './SingleCoffee';
 import CoffeeCard from './CoffeeCard';
@@ -12,9 +12,8 @@ const CoffeesContainer = () => {
     // const initialData = use(promise);
     // const [coffees, setCoffees] = useState(initialData);
 
-    const {coffees, loading} = use(CoffeeContext);
-    console.log(coffees);
-
+    const { coffees, loading } = use(CoffeeContext);
+      
     if(loading) {
         return <p>loading</p>
     }
@@ -28,7 +27,10 @@ const CoffeesContainer = () => {
         </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
           {coffees.map((coffee) => (
-            <CoffeeCard key={coffee?._id} coffee={coffee} />
+            <CoffeeCard
+              key={coffee?._id}              
+              coffee={coffee}
+            />
           ))}
         </div>
       </section>

@@ -60,7 +60,10 @@ const CoffeeCard = ({ coffee }) => {
         >
           <IoEyeOutline size={20} />
         </button>
-        <Link to={`/update-coffee-info/${coffee._id}`} className="btn join-item">
+        <Link
+          to={`/update-coffee-info/${coffee._id}`}
+          className="btn join-item"
+        >
           <MdEdit size={20} />
         </Link>
         <button

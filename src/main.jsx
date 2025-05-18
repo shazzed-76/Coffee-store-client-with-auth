@@ -28,12 +28,14 @@ const router = createBrowserRouter([
 
       {
         path: "single-coffee/:id",
-        loader:({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/coffees/${params.id}`),
         element: <SingleCoffee />,
-        hydrateFallbackElement: <p>Loading.....</p>
+        hydrateFallbackElement: <p>Loading.....</p>,
       },
       {
         path: "update-coffee-info/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/coffees/${params.id}`),
         element: <UpdateCoffeeInfo />,
       },
     ],
