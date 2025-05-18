@@ -11,6 +11,8 @@ import AddCoffee from "./Components/AddCoffee.jsx";
 import CoffeeProvider from "./Context/CoffeeProvider.jsx";
 import AuthProvider from "./Firebase/AuthProvider.jsx";
 import SignUp from "./Components/SignUp.jsx";
+import Users from "./Components/Users.jsx";
+import SignIn from "./Components/SignIn.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,11 +42,23 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:3000/coffees/${params.id}`),
         element: <UpdateCoffeeInfo />,
+        hydrateFallbackElement: <p>Loading.....</p>,
       },
       {
-        path: 'SignUp-user',
-        element: <SignUp />
-      }
+        path: "users",
+        loader: () => fetch("http://localhost:3000/users"),
+        element: <Users />,
+        hydrateFallbackElement: <p>Loading.....</p>,
+      },
+      {
+        path: "SignUp-user",
+        element: <SignUp />,
+      },
+
+      {
+        path: "signIn",
+        element: <SignIn />,
+      },
     ],
   },
 ]);
