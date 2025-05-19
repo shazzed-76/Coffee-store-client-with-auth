@@ -15,7 +15,7 @@ const AddCoffee = () => {
         
 
         // send coffee data in the database
-        fetch("http://localhost:3000/coffees", {
+        fetch("https://coffee-store-server-with-auth-sooty.vercel.app/coffees", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

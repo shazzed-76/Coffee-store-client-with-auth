@@ -28,7 +28,7 @@ const SignUp = () => {
             };
 
             //send user info in the database
-            fetch("http://localhost:3000/users", {
+            fetch("https://coffee-store-server-with-auth-sooty.vercel.app/users", {
               method: 'POST',
               headers: {
                 'content-type': 'application/json'

@@ -33,20 +33,20 @@ const router = createBrowserRouter([
       {
         path: "single-coffee/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffees/${params.id}`),
+          fetch(`https://coffee-store-server-with-auth-sooty.vercel.app/coffees/${params.id}`),
         element: <SingleCoffee />,
         hydrateFallbackElement: <p>Loading.....</p>,
       },
       {
         path: "update-coffee-info/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/coffees/${params.id}`),
+          fetch(`https://coffee-store-server-with-auth-sooty.vercel.app/coffees/${params.id}`),
         element: <UpdateCoffeeInfo />,
         hydrateFallbackElement: <p>Loading.....</p>,
       },
       {
         path: "users",
-        loader: () => fetch("http://localhost:3000/users"),
+        loader: () => fetch("https://coffee-store-server-with-auth-sooty.vercel.app/users"),
         element: <Users />,
         hydrateFallbackElement: <p>Loading.....</p>,
       },

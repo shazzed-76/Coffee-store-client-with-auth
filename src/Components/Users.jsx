@@ -22,7 +22,7 @@ const Users = () => {
 
         setUsers(remainingUsers);
         //delete the user from database
-        fetch(`http://localhost:3000/users/${id}`, {
+        fetch(`https://coffee-store-server-with-auth-sooty.vercel.app/users/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

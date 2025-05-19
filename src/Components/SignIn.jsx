@@ -23,7 +23,7 @@ const SignIn = () => {
            }
         //    console.log(lastSignInTime)
            //update the data in batabase
-           fetch(`http://localhost:3000/users`, {
+           fetch(`https://coffee-store-server-with-auth-sooty.vercel.app/users`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

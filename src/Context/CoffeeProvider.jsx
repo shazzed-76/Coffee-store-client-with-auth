@@ -11,7 +11,7 @@ const CoffeeProvider = ({children}) => {
     useEffect(() => {
        const fetchData = async() => {
             try{
-                const res = await fetch('http://localhost:3000/coffees');
+                const res = await fetch('https://coffee-store-server-with-auth-sooty.vercel.app/coffees');
                 if(!res.ok) {
                     throw new error(`Fetch failed: ${res.status}`)
                 }

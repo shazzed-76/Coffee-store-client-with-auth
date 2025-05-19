@@ -5,7 +5,7 @@ import CoffeeCard from './CoffeeCard';
 import { CoffeeContext } from '../Context/CoffeeProvider';
 
 
-// const promise = fetch("http://localhost:3000/coffees").then((res) =>
+// const promise = fetch("https://coffee-store-server-with-auth-sooty.vercel.app/coffees").then((res) =>
 //   res.json()
 // );
 const CoffeesContainer = () => {

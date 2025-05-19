@@ -26,7 +26,7 @@ const UpdateCoffeeInfo = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           //send the form data in the server and update the data that matched the id
-          fetch(`http://localhost:3000/coffees/${coffeeData._id}`, {
+          fetch(`https://coffee-store-server-with-auth-sooty.vercel.app/coffees/${coffeeData._id}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",
